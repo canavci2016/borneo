@@ -6,16 +6,18 @@ const createModel = (seqIns) => {
   };
 };
 
-module.exports.connection = ({host, database, user, password, driver = "mssql"}) => {
+module.exports.connection = ({host, database, user, password, driver = "mssql", ...otherSetting}) => {
 
   const sequelize = new Sequelize(database, user, password, {
     logging: console.log,
     host: host,
     dialect: driver /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-    dialectOptions: {"options": {validateBulkLoadParameters: true}}
+    dialectOptions: {"options": {validateBulkLoadParameters: true}},
+    ...otherSetting
   });
 
-  sequelize.authenticate().then(console.log).catch(console.log);
+  sequelize.authenticate()
+    .then(() => console.log(`${host} connection was established`)).catch(console.log);
 
   return {createModel: createModel(sequelize), instance: sequelize};
 };
