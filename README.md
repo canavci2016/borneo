@@ -6,6 +6,7 @@ borneo is a compound framework. gather all the common libraries together. create
 
 const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");
+
 AdminUserMssql.create({
   name: "can",
   middle_name: "avci",
