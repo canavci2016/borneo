@@ -22,7 +22,11 @@ borneo.addConnection("borneoMssqlDb", {
 
 borneo.logger.add("general", {filePath: "storage/logs"});
 
-borneo.logger.get("general").error("merhaba");
+const logger = borneo.logger.get("general");
+
+logger.error("merhaba");
+logger.warn("merhaba");
+logger.info("merhaba");
 
 const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");
