@@ -1,13 +1,14 @@
-const borneo = require("./index");
+const borneo = require("../index");
 const borneoServer = new borneo();
 const port = process.env.PORT || 3000;
 
 borneoServer.createConnection("wpLive", {
-  host: "db",
+  host: "127.0.0.1",
   database: "borneo",
   user: "root",
   password: "23101993",
-  driver: "mysql"
+  driver: "mysql",
+  port: "3307"
 });
 
 
