@@ -11,10 +11,33 @@ borneo.addConnection("borneoMysqlDb", {
   port: "3307"
 });
 
-const AdminUserModel = require("./models/AdminUser");
+borneo.addConnection("borneoMssqlDb", {
+  host: "127.0.0.1",
+  database: "borneo",
+  user: "sa",
+  password: "23101993Can.",
+  dialectOptions: {"options": {validateBulkLoadParameters: true}},
+  driver: "mssql",
+});
 
-AdminUserModel.findAll().then(r => console.log(r));
-AdminUserModel.count().then(r => console.log(r));
+const AdminUserMysql = require("./models/AdminUserMysql");
+const AdminUserMssql = require("./models/AdminUserMssql");
+AdminUserMssql.create({
+  name: "can",
+  middle_name: "avci",
+  email_address: "canavci_2222@gmail.com"
+}).then(console.log).catch(console.log);
+
+AdminUserMysql.create({
+  name: "can",
+  middle_name: "avci",
+  email_address: "canavci_2222@gmail.com"
+}).then(console.log).catch(console.log);
+
+
+//AdminUserModel.findAll().then(r => console.log(r));
+AdminUserMysql.count().then(r => console.log(r));
+AdminUserMssql.count().then(r => console.log(r));
 
 borneoServer.expressApp.get("/", (req, res) => res.json({c: 1}));
 

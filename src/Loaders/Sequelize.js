@@ -12,7 +12,6 @@ module.exports.connection = ({host, database, user, password, driver = "mssql", 
     logging: console.log,
     host: host,
     dialect: driver /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-    dialectOptions: {"options": {validateBulkLoadParameters: true}},
     ...otherSetting
   });
 

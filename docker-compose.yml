@@ -27,6 +27,16 @@ services:
       - "3307:3306"
     networks:
       - borneo
+  dbMssql:
+    image: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04
+    restart: always
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: 23101993Can.
+    ports:
+      - "1433:1433"
+    networks:
+      - borneo
   adminer:
     image: adminer
     restart: always
