@@ -20,6 +20,10 @@ borneo.addConnection("borneoMssqlDb", {
   driver: "mssql",
 });
 
+borneo.logger.add("general", {filePath: "storage/logs"});
+
+borneo.logger.get("general").error("merhaba");
+
 const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");
 
