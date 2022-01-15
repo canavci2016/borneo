@@ -27,6 +27,7 @@ const logger = borneo.logger.get("general");
 logger.error("merhaba");
 logger.warn("merhaba");
 logger.info("merhaba");
+logger.info("merhaba2");
 
 const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");

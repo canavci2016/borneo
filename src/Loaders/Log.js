@@ -29,7 +29,7 @@ module.exports = ({filePath = "logs"}) => {
 
 };
 
-const debugLogger = createLogger({
+/*const debugLogger = createLogger({
   level: 'silly',
   format: formatCombination,
   defaultMeta: {service: 'user-service'},
@@ -37,6 +37,6 @@ const debugLogger = createLogger({
     new transports.File({filename: 'logs/debug.log'}),
     new transports.Console(),
   ],
-});
+});*/
 
 //module.exports.debugLogger = debugLogger;
