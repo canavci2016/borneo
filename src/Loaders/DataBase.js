@@ -1,6 +1,5 @@
 const {connection, ...res} = require('./Sequelize');
 let connectionPools = {};
-console.log(res);
 
 let obj = {
   pools: connectionPools,

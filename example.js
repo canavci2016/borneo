@@ -1,5 +1,6 @@
 const borneo = require("./index");
 
+console.log(borneo.can);
 const borneoServer = borneo();
 
 borneoServer.setConnection("wpLive", {
@@ -17,6 +18,6 @@ borneoServer.setConnection("wpLive2", {
   password: "23101993"
 });
 
-borneoServer.app.get("/", (req, res) => res.json({c: 1}));
+borneoServer.expressApp.get("/", (req, res) => res.json({c: 1}));
 
-borneoServer.app.listen(8080, console.log("listening port is http://localhost:8080"));
+borneoServer.expressApp.listen(8080, console.log("listening port is http://localhost:8080"));
