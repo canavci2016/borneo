@@ -32,7 +32,6 @@ logger.info("merhaba2");
 const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");
 
-//AdminUserModel.findAll().then(r => console.log(r));
 AdminUserMysql.count().then(r => console.log(r));
 AdminUserMssql.count().then(r => console.log(r));
 

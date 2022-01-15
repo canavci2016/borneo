@@ -9,7 +9,7 @@ const createModel = (seqIns) => {
 module.exports.connection = ({host, database, user, password, driver = "mssql", ...otherSetting}) => {
 
   const sequelize = new Sequelize(database, user, password, {
-    logging: console.log,
+    logging: false,
     host: host,
     dialect: driver /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
     ...otherSetting
