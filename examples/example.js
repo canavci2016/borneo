@@ -2,7 +2,7 @@ const borneo = require("../index");
 const borneoServer = new borneo();
 const port = process.env.PORT || 3000;
 
-borneoServer.createConnection("wpLive", {
+borneo.addConnection("borneoMysqlDb", {
   host: "127.0.0.1",
   database: "borneo",
   user: "root",
@@ -11,9 +11,10 @@ borneoServer.createConnection("wpLive", {
   port: "3307"
 });
 
+const AdminUserModel = require("./models/AdminUser");
 
-console.log(Object.keys(borneoServer.getConnection('wpLive')));
-
+AdminUserModel.findAll().then(r => console.log(r));
+AdminUserModel.count().then(r => console.log(r));
 
 borneoServer.expressApp.get("/", (req, res) => res.json({c: 1}));
 

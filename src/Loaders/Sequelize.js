@@ -16,8 +16,7 @@ module.exports.connection = ({host, database, user, password, driver = "mssql", 
     ...otherSetting
   });
 
-  sequelize.authenticate()
-    .then(() => console.log(`${host} connection was established`)).catch(console.log);
+  sequelize.authenticate().then(() => console.log(`${host} connection was established`)).catch(console.log);
 
   return {createModel: createModel(sequelize), instance: sequelize};
 };
