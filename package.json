@@ -19,10 +19,11 @@
   "homepage": "https://github.com/canavci2016/borneo#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.3.5",
     "tedious": "^9.2.3",
     "winser": "^1.0.3",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.2",
-    "sequelize": "^6.3.5"
+    "winston-daily-rotate-file": "^4.5.2"
   }
 }

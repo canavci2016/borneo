@@ -1,22 +1,18 @@
 const borneo = require("./index");
 
-console.log(borneo.can);
-const borneoServer = borneo();
+const borneoServer = new borneo();
 
-borneoServer.setConnection("wpLive", {
+borneoServer.createConnection("wpLive", {
   host: "127.0.0.1",
   database: "cadds",
   user: "canavci",
-  password: "23101993"
+  password: "23101993",
+  driver: "mysql"
 });
 
 
-borneoServer.setConnection("wpLive2", {
-  host: "127.1.0.1",
-  database: "cadds",
-  user: "canavci",
-  password: "23101993"
-});
+console.log(Object.keys(borneoServer.getConnection('wpLive')));
+
 
 borneoServer.expressApp.get("/", (req, res) => res.json({c: 1}));
 

@@ -7,7 +7,7 @@ function Borneo() {
   this.database = database;
 }
 
-Borneo.prototype.setConnection = function (key, conObj) {
+Borneo.prototype.createConnection = function (key, conObj) {
   this.database.addConnection(key, conObj);
 };
 
