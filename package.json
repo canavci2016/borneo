@@ -1,6 +1,6 @@
 {
   "name": "sc-borneo",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "borneo is a compound framework. gather all the common libraries together. create an base infrastructure for a large number of  http projects",
   "main": "index.js",
   "scripts": {
