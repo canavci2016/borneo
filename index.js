@@ -7,6 +7,7 @@ function Borneo() {
   this.expressApp = new expressLoader();
 }
 
+Borneo.express = expressLoader;
 Borneo.addConnection = database.addConnection;
 Borneo.getConnection = database.getConnection;
 Borneo.database = database;
