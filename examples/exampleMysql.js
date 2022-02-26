@@ -2,7 +2,7 @@ const borneo = require("../index");
 const borneoServer = new borneo();
 const port = process.env.PORT || 3000;
 
-borneo.addConnection("borneoMysqlDb", {
+borneo.database.addConnection("borneoMysqlDb", {
   host: "127.0.0.1",
   database: "borneo",
   user: "root",

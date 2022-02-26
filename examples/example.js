@@ -2,7 +2,7 @@ const borneo = require("../index");
 const borneoServer = new borneo();
 const port = process.env.PORT || 3000;
 
-borneo.addConnection("borneoMysqlDb", {
+borneo.database.addConnection("borneoMysqlDb", {
   host: "127.0.0.1",
   database: "borneo",
   user: "root",
@@ -11,7 +11,7 @@ borneo.addConnection("borneoMysqlDb", {
   port: "3307"
 });
 
-borneo.addConnection("borneoMssqlDb", {
+borneo.database.addConnection("borneoMssqlDb", {
   host: "127.0.0.1",
   database: "borneo",
   user: "sa",
@@ -32,8 +32,8 @@ logger.info("merhaba2");
 const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");
 
-AdminUserMysql.count().then(r => console.log(r));
-AdminUserMssql.count().then(r => console.log(r));
+AdminUserMysql.count().then(r => console.log("mysql user count is " + r));
+AdminUserMssql.count().then(r => console.log("mssql user count is " + r));
 
 borneoServer.expressApp.get("/", (req, res) => res.json({c: 1}));
 borneoServer.expressApp.listen(port, console.log(`listening port is  ${port}`));

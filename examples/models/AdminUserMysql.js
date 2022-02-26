@@ -1,10 +1,10 @@
-const {database: {getConnection, DataTypes}} = require("../../index");
+const {database} = require("../../index");
 
-const Model = getConnection("borneoMysqlDb").instance.define('AdminUser', {
-  id: {type: DataTypes.INTEGER, field: 'id', primaryKey: true},
-  name: {type: DataTypes.STRING},
-  middle_name: DataTypes.STRING,
-  email_address: {type: DataTypes.STRING, allowNull: false},
+const Model = database.getConnection("borneoMysqlDb").instance.define('AdminUser', {
+  id: {type: database.DataTypes.INTEGER, field: 'id', primaryKey: true},
+  name: {type: database.DataTypes.STRING},
+  middle_name: database.DataTypes.STRING,
+  email_address: {type: database.DataTypes.STRING, allowNull: false},
 }, {
   tableName: "users",
   createdAt: false,
