@@ -19,6 +19,7 @@
   "homepage": "https://github.com/canavci2016/borneo#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "mongoose": "^6.2.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.3.5",
     "tedious": "^9.2.3",
