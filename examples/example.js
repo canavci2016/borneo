@@ -32,9 +32,11 @@ logger.info("merhaba2");
 
 const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");
+const AdminUserMongo = require("./models/AdminUserMongo");
 
 AdminUserMysql.count().then(r => console.log("mysql user count is " + r));
 AdminUserMssql.count().then(r => console.log("mssql user count is " + r));
+AdminUserMongo.find({}).then(r => console.log("mongo user count is " + r.length));
 
 borneoServer.expressApp.get("/", (req, res) => res.json({c: 1}));
 borneoServer.expressApp.listen(port, console.log(`listening port is  ${port}`));

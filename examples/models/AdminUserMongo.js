@@ -1,17 +1,8 @@
 const {database} = require("../../index");
 
-const Model = database.getConnection("borneoMongoDb").instance.define('AdminUser', {
-  id: {type: database.DataTypes.INTEGER, field: 'id', primaryKey: true},
-  name: {type: database.DataTypes.STRING},
-  middle_name: database.DataTypes.STRING,
-  email_address: {type: database.DataTypes.STRING, allowNull: false},
-}, {
-  tableName: "users",
-  createdAt: false,
-  updatedAt: false,
-  setterMethods: {},
-  getterMethods: {}
-});
+const userSchema = new database.mongoose.Schema({ name: 'string', size: 'string' });
+
+const Model = database.getConnection("borneoMongoDb").model('User', userSchema);
 
 
 module.exports = Model;
