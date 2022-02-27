@@ -46,7 +46,7 @@ let obj = {
       })
     }
   },
-  ...res
+  sequelize:{...res}
 
 };
 
