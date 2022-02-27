@@ -2,14 +2,13 @@ const borneo = require("../index");
 const borneoServer = new borneo();
 const port = process.env.PORT || 3000;
 
-borneo.database.addConnection("borneoMssqlDb", {
+borneo.database.addConnection("borneoMssqlDb", borneo.database.drivers.mssql.connectionBuilder({
   host: "127.0.0.1",
   database: "borneo",
   user: "sa",
   password: "23101993Can.",
   dialectOptions: {"options": {validateBulkLoadParameters: true}},
-  driver: "mssql",
-});
+}));
 
 const AdminUserMssql = require("./models/AdminUserMssql");
 

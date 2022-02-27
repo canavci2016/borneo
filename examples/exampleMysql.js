@@ -2,14 +2,12 @@ const borneo = require("../index");
 const borneoServer = new borneo();
 const port = process.env.PORT || 3000;
 
-borneo.database.addConnection("borneoMysqlDb", {
+borneo.database.addConnection("borneoMysqlDb", borneo.database.drivers.mysql.connectionBuilder({
   host: "127.0.0.1",
   database: "borneo",
   user: "root",
   password: "23101993",
-  driver: "mysql",
-  port: "3307"
-});
+}));
 
 const AdminUserMysql = require("./models/AdminUserMysql");
 
