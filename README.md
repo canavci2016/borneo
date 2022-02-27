@@ -24,7 +24,7 @@ borneo.database.addConnection("borneoMssqlDb", borneo.database.drivers.mssql.con
 }));
 
 borneo.database.addConnection("borneoMongoDb", borneo.database.drivers.mongodb.connectionBuilder({
-  host: "mongodb+srv://root:23101993@cluster0.itpri.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\n"
+  host: "mongodb+srv://xx:xxx@cluster0.itpri.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\n"
 }));
 
 borneo.logger.add("general", {filePath: "storage/logs"});
