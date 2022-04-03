@@ -18,7 +18,9 @@ borneo.database.addConnection("borneoMssqlDb", borneo.database.drivers.mssql.con
 }));
 
 borneo.database.addConnection("borneoMongoDb", borneo.database.drivers.mongodb.connectionBuilder({
-  host: "mongodb+srv://root:23101993@cluster0.itpri.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\n"
+  host: "mongodb+srv://root:23101993@cluster0.itpri.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\n",
+  onConnect: () => console.log("connected to mongo"),
+  onError: (err) => console.log("mongo error", err)
 }));
 
 borneo.logger.add("general", {filePath: "storage/logs"});
@@ -34,9 +36,9 @@ const AdminUserMysql = require("./models/AdminUserMysql");
 const AdminUserMssql = require("./models/AdminUserMssql");
 const AdminUserMongo = require("./models/AdminUserMongo");
 
-AdminUserMysql.count().then(r => console.log("mysql user count is " + r));
-AdminUserMssql.count().then(r => console.log("mssql user count is " + r));
-AdminUserMongo.find({}).then(r => console.log("mongo user count is " + r.length));
+AdminUserMysql.count().then(r => console.log("mysql user count is " + r)).catch(logger.error);
+AdminUserMssql.count().then(r => console.log("mssql user count is " + r)).catch(logger.error);
+AdminUserMongo.find({}).then(r => console.log("mongo user count is " + r.length)).catch(logger.error);
 
 borneoServer.expressApp.get("/", (req, res) => res.json({c: 1}));
 borneoServer.expressApp.listen(port, console.log(`listening port is  ${port}`));
